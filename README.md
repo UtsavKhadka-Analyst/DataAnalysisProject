@@ -1,59 +1,98 @@
-Predictive Analytics of Student Performance
-Overview
-This project aims to predict student performance based on various academic, demographic, and extracurricular factors. Using this dataset, predictive models were developed to analyze which factors significantly influence whether a student "Passed" or "Not Passed" in their courses.
+# Predictive Analytics of Student Performance
 
-Dataset Information
-The dataset contains information on students' study habits, attendance, past grades, and other factors influencing performance. Below are the details of the columns in the dataset:
+## Overview
+This project predicts student performance based on various academic, demographic, and extracurricular factors. Using a provided dataset, predictive models were developed to analyze which factors significantly impact whether students "Passed" or "Not Passed" in their courses.
 
-Columns Description
-Column Name	Description
-Student.ID	A unique identifier for each student.
-Study.Hours.per.Week	Average number of hours the student spends studying each week.
-Attendance.Rate	Attendance rate (in percentage) for the student. Missing values are present in this column.
-Previous.Grades	Average grades from previous academic terms (out of 100).
-Participation.in.Extracurricular.Activities	Whether the student participates in extracurricular activities (Yes/No).
-Parent.Education.Level	The highest level of education attained by the student's parents (e.g., High School, Master).
-Passed	Target variable indicating whether the student passed the course (Yes/No).
-Objectives
-The primary objectives of this project are:
+---
 
-Exploratory Data Analysis (EDA): Analyze the data to understand patterns, distributions, and relationships between variables.
-Data Preprocessing: Handle missing values, encode categorical variables, and normalize data for modeling.
-Model Development: Build predictive models to classify whether a student "Passed" or "Not Passed."
-Insights and Recommendations: Identify key factors influencing student performance and provide actionable recommendations.
-Steps to Reproduce
-1. Data Preprocessing
-Handling Missing Values:
-Missing attendance rates were imputed using the column mean/median.
-Encoding Categorical Variables:
-Categorical columns such as "Participation.in.Extracurricular.Activities" and "Parent.Education.Level" were encoded into numeric values.
-Yes = 1, No = 0.
-Parent Education Levels: High School = 1, Associate = 2, Bachelor = 3, Master = 4.
-Scaling:
-Continuous columns like "Study.Hours.per.Week," "Attendance.Rate," and "Previous.Grades" were normalized for consistency.
-Target Variable:
-The "Passed" column was encoded as: Yes = 1, No = 0.
-2. Exploratory Data Analysis (EDA)
-Analyzed distributions and correlations between features using:
-Histograms and boxplots for continuous variables.
-Bar charts for categorical variables.
-Correlation heatmap to identify relationships between features.
-3. Model Development
-Built and evaluated the following machine learning models:
-Logistic Regression: To classify students as "Passed" or "Not Passed."
-Random Forest: For robust classification and feature importance analysis.
-Support Vector Machine (SVM): For improved classification performance.
-Performance Metrics:
-Accuracy, Precision, Recall, F1-Score, and ROC-AUC.
-Key Findings
-Study Hours: Students who studied more than 12 hours per week were significantly more likely to pass.
-Attendance Rate: Higher attendance rates (>85%) strongly correlated with passing.
-Previous Grades: Students with grades above 70% were more likely to pass.
-Parent Education Level: Students whose parents attained higher education levels (e.g., Master's) performed better.
-Extracurricular Participation: Surprisingly, participation in extracurricular activities had a mixed impact on performance.
-Recommendations
-Encourage Study Hours: Programs to help students manage their time and study effectively could improve performance.
-Improve Attendance: Incentivize attendance through engagement strategies and academic policies.
-Targeted Support: Provide additional resources to students with low previous grades.
-Parental Engagement: Involve parents in their children’s education, especially those with lower educational attainment.
-Balance Extracurricular Activities: Encourage extracurricular participation while ensuring it doesn’t hinder academic progress.
+## Dataset Information
+The dataset contains the following columns:
+
+- **Student.ID**: A unique identifier for each student.
+- **Study.Hours.per.Week**: Average number of hours the student spends studying each week.
+- **Attendance.Rate**: Attendance rate (in percentage) for the student. Missing values are present in this column.
+- **Previous.Grades**: Average grades from previous academic terms (out of 100).
+- **Participation.in.Extracurricular.Activities**: Whether the student participates in extracurricular activities (`Yes` or `No`).
+- **Parent.Education.Level**: The highest level of education attained by the student's parents (e.g., High School, Bachelor, Master).
+- **Passed**: Target variable indicating whether the student passed the course (`Yes` or `No`).
+
+---
+
+## Objectives
+The primary objectives of this project include:
+
+1. **Exploratory Data Analysis (EDA)**:
+   - Analyzing patterns, distributions, and relationships between variables.
+2. **Data Preprocessing**:
+   - Handling missing values, encoding categorical variables, and scaling data.
+3. **Model Development**:
+   - Building predictive models to classify whether a student "Passed" or "Not Passed."
+4. **Insights and Recommendations**:
+   - Identify key factors influencing student performance and provide actionable recommendations.
+
+---
+
+## Steps to Reproduce
+
+### 1. Data Preprocessing
+- Missing values in `Attendance.Rate` were imputed using the column mean/median.
+- Categorical variables such as `Participation.in.Extracurricular.Activities` and `Parent.Education.Level` were encoded as numeric values:
+  - `Yes` = 1, `No` = 0.
+  - For `Parent.Education.Level`: High School = 1, Associate = 2, Bachelor = 3, Master = 4.
+- Continuous variables like `Study.Hours.per.Week`, `Attendance.Rate`, and `Previous.Grades` were normalized.
+- The target variable, `Passed`, was encoded as:
+  - `Yes` = 1, `No` = 0.
+
+### 2. Exploratory Data Analysis (EDA)
+- Visualized distributions of study hours, grades, and attendance rates using histograms and boxplots.
+- Analyzed relationships between features using scatter plots and correlation heatmaps.
+- Bar charts were used for categorical data such as extracurricular participation and parental education levels.
+
+### 3. Model Development
+- **Logistic Regression**: Built to classify students as "Passed" or "Not Passed."
+- **Random Forest Classifier**: Used for more robust classification and feature importance analysis.
+- **Support Vector Machine (SVM)**: Applied to improve classification performance.
+- **Evaluation Metrics**:
+  - Accuracy, Precision, Recall, F1-Score, and ROC-AUC were used to assess model performance.
+
+---
+
+## Key Findings
+- **Study Hours**: Students studying more than 12 hours per week had higher chances of passing.
+- **Attendance Rate**: Attendance rates above 85% were strongly correlated with passing.
+- **Previous Grades**: Students with grades above 70% were more likely to pass.
+- **Parent Education Level**: Students whose parents attained higher education levels (e.g., Master's) showed better performance.
+- **Extracurricular Activities**: Participation in extracurricular activities had mixed impacts on performance.
+
+---
+
+## Recommendations
+1. **Encourage Study Hours**: Promote effective time management and study programs for students.
+2. **Improve Attendance**: Introduce strategies to increase attendance, such as engagement programs.
+3. **Targeted Support**: Offer additional support to students with low previous grades.
+4. **Parental Engagement**: Encourage parents to participate actively in their children’s education.
+5. **Balance Activities**: Ensure students participating in extracurricular activities maintain a balance with academics.
+
+---
+
+## Usage Instructions
+
+### 1. Environment Setup
+- Install R and RStudio (if not already installed).
+- Install the required R libraries:
+  - `tidyverse` (for data manipulation and visualization)
+  - `caret` (for machine learning models)
+  - `e1071` (for SVM and other advanced models)
+  - `pROC` (for ROC curve analysis)
+
+Run the following command in your R console to install these packages:
+```R
+install.packages(c("tidyverse", "caret", "e1071", "pROC"))
+# Load required libraries
+library(tidyverse)
+
+# Load the dataset
+df <- read.csv("student_performance.csv")
+
+# Display the first few rows
+head(df)
